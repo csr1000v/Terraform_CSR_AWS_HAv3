@@ -10,8 +10,8 @@ Terraform module which creates an HA Pair of two CSR 1000V soft switches in AWS.
 * Requires Terraform version 12 or greater
 * Ensure aws credentials are specified before executing terraform plan. There are multiple ways to do achieve this and documented in detail at [AWS Provider](https://www.terraform.io/docs/providers/aws/index.html)
 * The examples folder has main.tf file showing sample usage of CSR AWS HAv3 module. In order to use the sample file, edit the main.tf in example folder with the correct variables
-* Public and private keys are needed in order to SSH into CSR after deployment in order to apply day 0 configuration. Specify base64 encoded public and private keys in var.tfvars file. The keyfile can be encoded to base64 using openssl utility: 
-  * openssl base64 -in *inputfile.pem* -out *outputfile*
+* Public and private keys are needed in order to SSH into CSR after deployment in order to apply day 0 configuration. Specify base64 encoded public and private keys in var.tfvars file. The public and private key files can be encoded to base64 using openssl utility: 
+  * openssl base64 - A -in *inputfile.pem* -out *outputfile*
 
 ## Usage
 
