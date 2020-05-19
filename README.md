@@ -41,8 +41,8 @@ module CSRV_HA {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| availability\_zone | The AWS zone to setup your CSR1000V Highly Available Routers | string | `"us-west-2a"` | no |
-| aws\_region | Region for aws | string | `"us-west-2"` | no |
+| availability\_zone | The AWS zone to setup your CSR1000V Highly Available Routers | string | `"us-west-1a"` | no |
+| aws\_region | Region for aws | string | `"us-west-1"` | no |
 | base64encoded\_ssh\_private\_key | base64 encoded private key to use for terraform to connect to the router | string | n/a | yes |
 | base64encoded\_ssh\_public\_key | base64 encoded public key to use for terraform to connect to the router | string | n/a | yes |
 | aws\_ssh\_keypair\_name | Name of ssh key pair you are putting into aws | string | `<string>` | yes |
@@ -75,7 +75,11 @@ module CSRV_HA {
 | node2\_public\_ip\_address |  |
 | csr1000v\_instance\_profile |  |
 
-## Basic Deployment instructions
+## Deployment requirements
+* The examples folder has main.tf file showing sample usage of CSR AWS HAv3 module. 
+* Edit the main.tf file with the correct variables
+* Public and private keys are needed in order to SSH into CSR after deployment in order to apply day 0 configuration. Specify base64 encoded public and private keys in var.tfvars file. The keyfile can be encoded to base64 using openssl utility: openssl base64 -in *inputfile.pem* -out *outputfile*
+* Ensure aws credentials are specified before executing terraform plan. There are multiple ways to do achieve this and documented in detail at [AWS Provider](https://www.terraform.io/docs/providers/aws/index.html)
 
 ## Extra
 To see the relationship map open graph.svg in a browser
