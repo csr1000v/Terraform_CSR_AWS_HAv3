@@ -1,8 +1,9 @@
 module CSRV_HA {
-  source                                    = "github.com/IGNW/cisco-csr-ha-iac"
+  source                                    = "github.com/csr1000v/Terraform_CSR_AWS_HAv3"
   base64encoded_private_ssh_key             = "${var.base64encoded_private_ssh_key}"
   base64encoded_public_ssh_key              = "${var.base64encoded_public_ssh_key}"
-  availability_zone                         = "us-west-2a"
+  aws_region                                = "us-west-1"
+  availability_zone                         = "us-west-1a"
   node1_tunnel1_ip_and_mask                 = "192.168.101.1 255.255.255.252"
   node2_tunnel1_ip_and_mask                 = "192.168.101.2 255.255.255.252"
   tunnel1_subnet_ip_and_mask                = "192.168.101.0 0.0.0.255"
@@ -18,7 +19,8 @@ module CSRV_HA {
   public_security_group_egress_rules        = ["all-all"]
   ssh_ingress_cidr_block                    = ["0.0.0.0/0"]
   public_security_group_ingress_rules       = ["https-443-tcp", "http-80-tcp", "all-icmp"]
-  instance_type                             = "t2.nano"
+  instance_type                             = "c5.large"
+  csr1000v_ami_filter                       = "CSR_AMI-cppbuild.17.1.1-byol-624f5bb1-7f8e-4f7c-ad2c-03ae1cd1c2d3-ami-08547c5201dca980c.4"
 }
 
 
