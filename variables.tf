@@ -115,7 +115,7 @@ variable "public_security_group_ingress_rules" {
 
 variable "instance_type" {
   description = "Machine size of the routers"
-  default     = "c4.large"
+  default     = "c5.large"
 }
 
 variable "aws_region" {
