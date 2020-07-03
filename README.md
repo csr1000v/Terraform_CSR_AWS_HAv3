@@ -65,7 +65,6 @@ module CSRV_HA {
 | private\_vpc\_cidr\_block | Cidr block for the entire vpc | string | `"10.16.0.0/16"` | no |
 | public\_route\_table\_allowed\_cidr | Allowed cidr\_block for connections from the public network interface route table | string | `"0.0.0.0/0"` | no |
 | public\_security\_group\_egress\_rules | Allowed cidr\_block for connections from the public | list(string) | `<list>` | no |
-| public\_security\_group\_egress\_rules | Allowed cidr\_block for connections from the public | list(string) | `<list>` | no |
 | public\_security\_group\_ingress\_cidr\_blocks | Allowed cidr\_block for connections to the public network | list(string) | `<list>` | no |
 | public\_security\_group\_ingress\_rules | Rules allowed to public network | list(string) | `<list>` | no |
 | ssh\_ingress\_cidr\_block | Address block from which ssh is allowed | list(string) | `<list>` | no |
