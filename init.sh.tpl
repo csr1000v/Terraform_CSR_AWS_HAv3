@@ -127,14 +127,14 @@ ssh -i csr.pem -o StrictHostKeyChecking=no ec2-user@${node1_public_ip} << EOF
 
 configure terminal
 redundancy
-cloud-ha bfd peer ${node2_eth1_private}
+cloud-ha bfd peer ${node2_tunn1_ip}
 end
 EOF
 
 ssh -i csr.pem -o StrictHostKeyChecking=no ec2-user@${node2_public_ip} << EOF
 configure terminal
 redundancy
-cloud-ha bfd peer ${node1_eth1_private}
+cloud-ha bfd peer ${node1_tunn1_ip}
 end
 EOF
 
