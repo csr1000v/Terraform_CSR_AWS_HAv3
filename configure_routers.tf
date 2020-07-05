@@ -24,6 +24,8 @@ locals {
     node1_eth1_eni             = "${aws_network_interface.csr1000v1eth1.id}"
     node2_eth1_eni             = "${aws_network_interface.csr1000v2eth1.id}"
     ssh_key                    = "${base64decode(var.base64encoded_private_ssh_key)}"
+    node1_tunn1_ip    	       = "${element(split(" ",var.node1_tunnel1_ip_and_mask),0)}"
+    node2_tunn1_ip             = "${element(split(" ",var.node2_tunnel1_ip_and_mask),0)}"
   }
 }
 
